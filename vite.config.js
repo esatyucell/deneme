@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/our-little-night/', // GitHub repo adınızla aynı olmalı
+  base: '/deneme/', // GitHub repo adınızla aynı olmalı
 })
