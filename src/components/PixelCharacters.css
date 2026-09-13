@@ -1,0 +1,33 @@
+.characters-wrapper {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 5px; /* Karakterleri ateşin biraz arkasında tutar */
+  position: relative;
+  z-index: 1; /* Galeri açıldığında altta kalmasını garantiler */
+}
+
+.pixel-sprite {
+  shape-rendering: crispEdges;
+  image-rendering: pixelated;
+  transform-origin: bottom center;
+}
+
+.boy {
+  animation: breathe 3s infinite alternate ease-in-out, fireFlicker 2s infinite alternate;
+}
+
+.girl {
+  animation: breathe 3.5s infinite alternate ease-in-out, fireFlicker 2.5s infinite alternate;
+}
+
+@keyframes breathe {
+  0% { transform: scaleY(1) translateY(0); }
+  100% { transform: scaleY(0.98) translateY(1.5px); }
+}
+
+@keyframes fireFlicker {
+  0% { filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.8)) brightness(1); }
+  100% { filter: drop-shadow(0 8px 15px rgba(255, 123, 0, 0.3)) brightness(1.1); }
+}

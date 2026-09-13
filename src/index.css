@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+  --night-sky: #0b0f19;
+  --night-sky-top: #06080d;
+  --grass-dark: #122119;
+  --grass-light: #1a3024;
+  --fire-orange: #ff7b00;
+  --fire-yellow: #ffcc00;
+  --heart-red: #e63946;
+  --wood-border: #4a3627;
+  --wood-bg: #8b5a2b;
+  --text-light: #fefae0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--night-sky);
+  color: var(--text-light);
+  font-family: 'VT323', monospace; /* Pixel art hissi veren font */
+  overflow: hidden; /* Masaüstünde gereksiz scroll'u engeller */
+  -webkit-font-smoothing: none;
+}
+
+/* Pixel Art Görüntü Kalitesi */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Animasyonlar */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes fireGlow {
+  0%, 100% { filter: drop-shadow(0 0 15px var(--fire-orange)); }
+  50% { filter: drop-shadow(0 0 25px var(--fire-yellow)); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes fireflyMove {
+  0% { transform: translate(0, 0) scale(1); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) scale(0.5); opacity: 0; }
+}
+
+@keyframes pulseHeart {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); filter: drop-shadow(0 0 10px var(--heart-red)); }
+  100% { transform: scale(1); }
+}
